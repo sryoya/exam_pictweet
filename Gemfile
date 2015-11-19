@@ -46,6 +46,7 @@ group :development, :test do
   gem 'sprockets', '2.11.0'
   gem 'kaminari'
   gem 'devise'
+  gem "rspec-rails", "~> 3.1.0"
 end
 
 
