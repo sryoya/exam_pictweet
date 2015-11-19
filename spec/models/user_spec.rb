@@ -33,5 +33,17 @@ describe User  do
     expect(user2.errors[:email]).to include("has already been taken")
     end
 
+    it 'counts the number of tweets of the user by count_tweets method' do
+      user = create(:user)
+      create(:tweet, user_id: user.id)
+      expect(user.count_tweets).to eq 1
+    end
+
+    it 'returns 0 by count_tweets method without a tweet of the user' do
+      user = create(:user, id: "1")
+      create(:tweet, user_id: "2")
+      expect(user.count_tweets).to eq 0
+    end
+
   end
 end
